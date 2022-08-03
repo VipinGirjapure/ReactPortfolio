@@ -11,8 +11,12 @@ import projImg3 from "../Components/Img/project-Img/running car.jpg";
 import projImg4 from "../Components/Img/project-Img/MovieFinderApp.jpg";
 import projImg5 from "../Components/Img/project-Img/clock js.jpg";
 import projImg6 from "../Components/Img/project-Img/CalcSimple2.jpg";
-import projImg7 from "../Components/Img/project-Img/PortfolioHTML.jpg";
+import projImg7 from "../Components/Img/project-Img/CalcSimple.jpg";
 import projImg8 from "../Components/Img/project-Img/PortfolioHTML.jpg";
+import projImg9 from "../Components/Img/project-Img/PortfolioYellow.jpg";
+import projImg10 from "../Components/Img/project-Img/clockJsMobile.jpg";
+import projImg11 from "../Components/Img/project-Img/AdviceApp.jpg";
+import projImg12 from "../Components/Img/project-Img/TheSiren.jpg";
 
 
 import ProjectsCard from "./ProjectsCard";
@@ -27,32 +31,32 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Sahara Website",
+      description: "A HTML/CSS Project",
       imgUrl: projImg2,
     },
     {
       id: 3,
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Running Car",
+      description: "A HTML/CSS Project",
       imgUrl: projImg3,
     },
     {
       id: 4,
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Movie Finder App",
+      description: "A React Project",
       imgUrl: projImg4,
     },
     {
       id: 5,
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Alarm Clock App",
+      description: "A HTML/CSS/JS Project",
       imgUrl: projImg5,
     },
     {
       id: 6,
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Calculator",
+      description: "A HTML/CSS/ReactJs Project",
       imgUrl: projImg6,
     },
     
@@ -60,39 +64,39 @@ const Projects = () => {
   const projectsTabTwo = [
    {
       id: 7,
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Calculator",
+      description: "A HTML/CSS Project",
       imgUrl: projImg7,
     },
     {
       id: 8,
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Portfolio",
+      description: "A HTML/CSS Project",
       imgUrl: projImg8,
     },
     {
       id: 9,
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      title: "Portfolio",
+      description: "A HTML/CSS/ReactJs Project",
+      imgUrl: projImg9,
     },
     {
       id: 10,
       title: "Business Startup",
       description: "Design & Development",
-      imgUrl: projImg4,
+      imgUrl: projImg10,
     },
     {
       id: 11,
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg5,
+      title: "Advice App",
+      description: "A HTML/CSS/ReactJs Project",
+      imgUrl: projImg11,
     },
     {
       id: 12,
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg6,
+      title: "News WebApp",
+      description: "A HTML/CSS/ReactJs/NodeJs Project",
+      imgUrl: projImg12,
     },
    
   ];

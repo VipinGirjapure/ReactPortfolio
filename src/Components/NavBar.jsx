@@ -70,14 +70,14 @@ const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="https://www.linkedin.com/" target="_blank">
-                  <img src={navIcon1} alt="linkedin"  rel="noreferrer" />
+                <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+                  <img src={navIcon1} alt="linkedin"   />
                 </a>
-                <a href="https://www.facebook.com/" target="_blank">
-                  <img src={navIcon2} alt="facebook"  rel="noreferrer" />
+                <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+                  <img src={navIcon2} alt="facebook"   />
                 </a>
-                <a href="https://www.instagram.com/accounts/login/" target="_blank">
-                  <img src={navIcon3} alt="instagram"  rel="noreferrer"  />
+                <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noreferrer">
+                  <img src={navIcon3} alt="instagram"  />
                 </a>
               </div>
               <HashLink to="#contact">

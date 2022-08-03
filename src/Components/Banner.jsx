@@ -6,11 +6,11 @@ import { HashLink } from "react-router-hash-link";
 import { BrowserRouter } from "react-router-dom";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
-import { isVisible } from "@testing-library/user-event/dist/utils";
+// import { isVisible } from "@testing-library/user-event/dist/utils";
 const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const toRotate = ["Web Developer", "Web Designer", " UI,UX Designer"];
+  const toRotate = ["Web Developer", "Frontend Developer", " UI,UX Designer"];
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const period = 1000;
@@ -21,7 +21,7 @@ const Banner = () => {
     return () => {
       clearInterval(ticker);
     };
-  }, [text]);
+  },[text]);
   const tick = () => {
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
@@ -38,7 +38,7 @@ const Banner = () => {
     } else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-      setDelta(500);
+      setDelta(800);
     }
   };
   return (
@@ -61,12 +61,10 @@ const Banner = () => {
                     </h1>
 
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Facere sint reprehenderit quaerat rem itaque consequatur,
-                      optio velit sed ex earum.
+                I'm passionate about bringing forward great products.
                     </p>
                     <HashLink to="#contact">
-                      <button className="vvd">
+                      <button className="vvd" >
                         Lets Connect <ArrowRightCircle />
                       </button>
                     </HashLink>

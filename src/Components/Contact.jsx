@@ -11,17 +11,17 @@ const Contact = () => {
     message: "",
   };
   const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState("Send");
-  const [status, setStatus] = useState({});
+  const [buttonText, ] = useState("Send");
+  const [status, ] = useState({});
   const onFormUpdate = (category, value) => {
     setFormDetails({
       ...formDetails,
       [category]: value,
     });
   };
-  const handleSubmit =()=>{
+  // const handleSubmit =()=>{
     
-  }
+  // }
   return (
     <section className="contact" id="contact">
       <Container>

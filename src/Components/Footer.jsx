@@ -12,21 +12,30 @@ const Footer = () => {
           </Col>
           <Col sm={6} className="text-center text-sm-end">
             <div className="social-icon">
-              <a href="https://www.linkedin.com/" target="_blank">
+              <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img src={navIcon1} alt="linkedin" />
               </a>
-              <a href="https://www.facebook.com/" target="_blank">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img src={navIcon2} alt="facebook" />
               </a>
               <a
                 href="https://www.instagram.com/accounts/login/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <img src={navIcon3} alt="instagram" />
               </a>
             </div>
           </Col>
-            <p >© 2022</p>
+          <p>© 2022</p>
         </Row>
       </Container>
     </footer>

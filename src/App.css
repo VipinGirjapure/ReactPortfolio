@@ -396,6 +396,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-bottom: 25px;
   color: #833fd2;
 }
+.nav-pills .nav-link 
 .project .nav.nav-pills {
   width: 72%;
   margin: 0 auto;
@@ -434,11 +435,19 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project .nav.nav-pills .nav-link.active::before {
   width: 100% !important;
 }
+.nav-pills .nav-link {
+color: white;
+}
+.nav-pills .nav-link:hover {
+
+color: white !important;
+}
 .nav-pills .nav-link.active{
   background-color: transparent !important;
+  color: violet !important;
 
 }
-.project .nav.nav-pills .nav-link.active {
+.project .nav.nav-pills.active {
   border: 1px solid rgba(255, 255, 255, 1);
 }
 .Nav.Link#projects-tabs-tab-first {

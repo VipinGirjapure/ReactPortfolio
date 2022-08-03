@@ -6,7 +6,7 @@ const ProjectsCard = ({id,title,description,imgUrl}) =>{
             <div className="project-imgbox">
                 <img src={imgUrl} alt='project'/>
                 <div className="project-text">
-                    <h4>{title}</h4>
+                    <h5>{title}</h5>
                     <span>{description}</span>
                 </div>
             </div>
