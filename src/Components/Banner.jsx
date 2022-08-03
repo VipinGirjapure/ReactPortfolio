@@ -12,16 +12,15 @@ const Banner = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const toRotate = ["Web Developer", "Frontend Developer", " UI,UX Designer"];
   const [text, setText] = useState("");
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const period = 1000;
+  // const [, setDelta] = useState(300 - Math.random() * 100);
+  // const period = 1000;
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
-    }, delta);
-    return () => {
-      clearInterval(ticker);
-    };
-  },[text]);
+    },500);
+    return () => clearInterval(ticker);
+ 
+  });
   const tick = () => {
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
@@ -30,15 +29,15 @@ const Banner = () => {
       : fullText.substring(0, text.length + 1);
     setText(updatedText);
     if (isDeleting) {
-      setDelta((prevDelta) => prevDelta / 2);
+      // setDelta((prevDelta) => prevDelta / 2);
     }
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
-      setDelta(period);
+      // setDelta(period);
     } else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-      setDelta(800);
+      // setDelta(800);
     }
   };
   return (
