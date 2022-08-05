@@ -3,6 +3,7 @@ import navIcon1 from "../Components/Img/nav-icon1.svg";
 import navIcon2 from "../Components/Img/nav-icon2.svg";
 import navIcon3 from "../Components/Img/nav-icon3.svg";
 const Footer = () => {
+
   return (
     <footer className="footer">
       <Container>

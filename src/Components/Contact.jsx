@@ -1,95 +1,131 @@
-import { useState } from "react";
-import { Container, Row, Col, } from "react-bootstrap";
+import { useRef, useState,useContext } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../Components/Img/contact-img.svg";
+import emailjs from "@emailjs/browser";
+import { themeContext } from "../ThemeProvider";
 
 const Contact = () => {
-  const formInitialDetails = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    message: "",
-  };
-  const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, ] = useState("Send");
-  const [status, ] = useState({});
-  const onFormUpdate = (category, value) => {
-    setFormDetails({
-      ...formDetails,
-      [category]: value,
-    });
-  };
+  // const formInitialDetails = {
+  //   firstName: "",
+  //   lastName: "",
+  //   email: "",
+  //   phone: "",
+  //   message: "",
+  // };
+  // const [formDetails, setFormDetails] = useState(formInitialDetails);
+  // const [buttonText, ] = useState("Send");
+  // const [status, ] = useState({});
+  // const onFormUpdate = (category, value) => {
+  //   setFormDetails({
+  //     ...formDetails,
+  //     [category]: value,
+  //   });
+  // };
   // const handleSubmit =()=>{
-    
+
   // }
+  const form = useRef();
+  const [done, setdone] = useState(false);
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
+
+  const sendEmail = (e) => {
+
+    emailjs
+      .sendForm(
+        "service_4cr0bw8",
+        "template_xmbu3k6",
+        form.current,
+        "2gOHWHs3JXlI4rApE"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setdone(true);
+    e.preventDefault();
+
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
-    <section className="contact" id="contact">
-      <Container>
-        <Row className="align-items-center">
+    <section className="contact" id="contact" style={{
+      background: darkMode ? "#fffefc" : "",
+      color: darkMode ? "" : "black",
+      border: darkMode ? " 0.1px solid #833fd2" : "",
+     
+    }}>
+      <Container >
+        <Row className="align-items-center" >
           <Col md={6}>
             <img src={contactImg} alt="Contact Us" />
           </Col>
           <Col md={6}>
-            <h2>Get In Touch</h2>
-            <form>
+            <h2>Connect With Me</h2>
+            <form ref={form} onSubmit={sendEmail}>
               <Row>
-                <Col sm={6} className="px-1">
+                <Col sm={6} className="px-1" >
                   <input
                     type="text"
-                    value={formDetails.firstName}
-                    placeholder="First Name "
-                    onChange={(e) => onFormUpdate("firstName", e.target.value)}
+                    name="user_name" 
+               
+                    placeholder="Name"
+            required style={{
+          
+              border: darkMode ? " 0.1px solid #833fd2" : "",
+
+          
+            }}
                   />
                 </Col>
-                <Col sm={6} className="px-1">
-                  <input
-                    type="text"
-                    value={formDetails.lastName}
-                    placeholder="Last Name "
-                    onChange={(e) => onFormUpdate("lastName", e.target.value)}
-                  />
-                </Col>
-                <Col sm={6} className="px-1">
+            
+                <Col sm={6} className="px-1" >
                   <input
                     type="email"
-                    value={formDetails.email}
+                    name="user_email"
+                   
                     placeholder="Email"
-                    onChange={(e) => onFormUpdate("email", e.target.value)}
+            required
+            style={{
+
+              border: darkMode ? "0.1px solid #833fd2" : "",
+
+          
+            }}
+             
                   />
                 </Col>
-                <Col sm={6} className="px-1">
-                  <input
-                    type="tel"
-                    value={formDetails.phone}
-                    placeholder="Phone No "
-                    onChange={(e) => onFormUpdate("phone", e.target.value)}
-                  />
-                </Col>
+              
+                <br/>
                 <Col>
                   <textarea
-                    name=""
+                    name="message"
                     id=""
                     cols="30"
-                    rows="6"
-                    value={formDetails.message}
+                    rows="3"
+            
                     placeholder="Message"
-                    onChange={(e) => onFormUpdate("message", e.target.value)}
+                  
+            required  style={{
+  
+              color: darkMode ? "black" : "",
+              border: darkMode ? " 0.1px solid #833fd2" : "",
+
+          
+            }}
+
                   ></textarea>
-                  <button type="submit">
-                    <span>{buttonText}</span>
+                  <button type="submit" value='send'>
+                    <span>Send</span>
                   </button>
                 </Col>
-                {status.message && (
-                  <Col>
-                    <p
-                      className={
-                        status.success === false ? "not success" : "success"
-                      }
-                    >
-                      {status.message}{" "}
-                    </p>
-                  </Col>
-                )}
+                <span className="thanks">
+            {" "}
+            {done && "Thanks for connecting with me !"}{" "}
+          </span>
+                
               </Row>
             </form>
           </Col>

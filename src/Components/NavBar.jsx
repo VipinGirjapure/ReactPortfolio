@@ -2,16 +2,18 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useEffect, useState } from "react";
-import navIcon1 from "../Components/Img/nav-icon1.svg";
-import navIcon2 from "../Components/Img/nav-icon2.svg";
-import navIcon3 from "../Components/Img/nav-icon3.svg";
+import { useEffect, useState, useContext } from "react";
 import { HashLink } from "react-router-hash-link";
 import { BrowserRouter } from "react-router-dom";
+import Toggle from "./Toggle";
+import { themeContext } from "../ThemeProvider";
 
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
+
   useEffect(() => {
     const onScroll = () => {
       if (window.scrollY > 50) {
@@ -31,13 +33,20 @@ const NavBar = () => {
     <BrowserRouter>
       <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
         <Container>
-          <Navbar.Brand href="#home">
+          <Toggle />
+          {/* <Navbar.Brand href="#home">
             {" "}
             <strong className="logo">VIPIN</strong>
-          </Navbar.Brand>
+
+          </Navbar.Brand> */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+            <Nav
+              className="me-auto"
+              style={{
+                color: darkMode ? "violet" : "",
+              }}
+            >
               <Nav.Link
                 href="#home"
                 className={
@@ -69,7 +78,7 @@ const NavBar = () => {
               </Nav.Link>
             </Nav>
             <span className="navbar-text">
-              <div className="social-icon">
+              {/* <div className="social-icon">
                 <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
                   <img src={navIcon1} alt="linkedin"   />
                 </a>
@@ -79,9 +88,14 @@ const NavBar = () => {
                 <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noreferrer">
                   <img src={navIcon3} alt="instagram"  />
                 </a>
-              </div>
+              </div> */}
               <HashLink to="#contact">
-                <button className="vvd">
+                <button
+                  className="vvd"
+                  style={{  background: darkMode ?  "":'',
+                    color: darkMode ? "violet" : "",
+                  }}
+                >
                   {" "}
                   <span>Lets Connect</span>
                 </button>
