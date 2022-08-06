@@ -274,10 +274,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .t-button {
-  border-radius: 100%;
-  background-color: violet;
-  position: absolute;
-  font-size: large;
+    background-color: violet;
+    border-radius: 100%;
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    margin: 0px;
 }
 
 /* banner */
